@@ -26,9 +26,26 @@ namespace MarsRoverChallenge
             Instructions = instructions;
         }
 
-        public (int,int) CurrentLocation()
+        public string CurrentLocation()
         {
-            return Rover.Coordinates;
+            FollowInstructions();
+            string output = Rover.Coordinates.ToString() + " " + Rover.Direction.ToString();
+            return output;
+        }
+
+        public void FollowInstructions()
+        {
+            foreach (char c in Instructions)
+            { 
+                switch (c)
+                { 
+                    case 'L': Rover.LeftTurn(); break;
+                    case 'R': Rover.RightTurn(); break;
+                    case 'M': Rover.MoveForward(); break;
+                }
+
+            }
+
         }
 
     }

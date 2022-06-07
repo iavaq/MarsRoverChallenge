@@ -14,11 +14,11 @@ namespace MarsRoverChallengeTests
         }
 
         [Test]
-        public void ShouldReturnCoordinates()
+        public void ShouldReturn13N()
         {
             marsMission = new MissionControl((1,2), MarsRoverChallenge.BaseModels.EInstructions.Directions.N, (5,5), "LMLMLMLMM");
 
-            marsMission.CurrentLocation().Should().Be((1, 2));
+            marsMission.CurrentLocation().Should().Be("(1, 3) N");
         }
     }
 }

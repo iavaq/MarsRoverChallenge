@@ -8,7 +8,14 @@ namespace MarsRoverChallenge.BaseModels
 {
     public static class EInstructions
     {
-        public enum Directions { NONE, N, S, E, W }
+        public enum Directions 
+        { 
+            NONE = 0, 
+            N = 90, 
+            W = 180, 
+            S = 270,
+            E = 360
+        }
 
         public enum Movements { NONE, L, R, F }
     }

@@ -12,5 +12,6 @@ namespace MarsRoverChallenge
         public MarsRover((int,int) coordinates, EInstructions.Directions direction): base(coordinates, direction)
         {
         }
+
     }
 }

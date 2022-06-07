@@ -16,7 +16,8 @@ namespace MarsRoverChallenge
             Coordinates = coordinates;
             Direction = direction;
         }
-        public void LeftTurn()
+
+        public virtual void LeftTurn()
         {
             if (Direction.Equals(EInstructions.Directions.E))
             {
@@ -27,7 +28,7 @@ namespace MarsRoverChallenge
             Console.WriteLine(Direction);
         }
 
-        public void RightTurn()
+        public virtual void RightTurn()
         {
             if (Direction.Equals(EInstructions.Directions.NONE))
             {
@@ -38,22 +39,23 @@ namespace MarsRoverChallenge
             Console.WriteLine(Direction);
         }
 
-        public void MoveForward()
+        public virtual void MoveForward()
         {
             int x = Coordinates.Item1;
             int y = Coordinates.Item2;
 
             switch (Direction)
             {
-                case EInstructions.Directions.E: x++;  break;
-                case EInstructions.Directions.W: x--;  break;
+                case EInstructions.Directions.E: x++; break;
+                case EInstructions.Directions.W: x--; break;
                 case EInstructions.Directions.S:; y--; break;
-                case EInstructions.Directions.N: y++;  break;
+                case EInstructions.Directions.N: y++; break;
             }
 
             Coordinates = (x, y);
             Console.WriteLine(Coordinates);
         }
+
     }
 }
  

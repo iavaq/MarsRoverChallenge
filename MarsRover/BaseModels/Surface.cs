@@ -10,11 +10,15 @@ namespace MarsRoverChallenge
     {
         public readonly (int, int) MinBoundary;
         public readonly (int, int) MaxBoundary;
-
+        public List<Vehicle> VehiclesOnSurface;
         public Surface((int, int) minBoundary, (int, int) maxBoundary)
         {
             MinBoundary = minBoundary;
             MaxBoundary = maxBoundary;
+        }
+
+        public void GetVehiclesOnSurface()
+        { 
         }
 
     }

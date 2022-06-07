@@ -11,10 +11,11 @@ namespace MarsRoverChallenge
         public readonly (int, int) MinBoundary;
         public readonly (int, int) MaxBoundary;
 
-        public Surface((int, int) maxBoundary)
+        public Surface((int, int) minBoundary, (int, int) maxBoundary)
         {
-            MinBoundary = (0,0);
+            MinBoundary = minBoundary;
             MaxBoundary = maxBoundary;
-        }   
+        }
+
     }
 }

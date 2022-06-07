@@ -9,9 +9,9 @@ namespace MarsRoverChallenge.Models
 {
     public class Plateau : Surface
     {
-        public Plateau((int, int) maxBoundary) : base(maxBoundary)
+        private static (int, int) minBoundary = (0, 0);
+        public Plateau((int, int) maxBoundary) : base(minBoundary, maxBoundary)
         {
-
         }
     }
 }

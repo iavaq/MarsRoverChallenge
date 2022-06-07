@@ -17,9 +17,7 @@ namespace MarsRoverChallenge
             MaxBoundary = maxBoundary;
         }
 
-        public void GetVehiclesOnSurface()
-        { 
-        }
+        public abstract void CheckBoundaries();
 
     }
 }

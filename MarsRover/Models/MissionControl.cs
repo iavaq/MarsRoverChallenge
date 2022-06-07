@@ -19,7 +19,7 @@ namespace MarsRoverChallenge
         public EInstructions.Directions directions;
         public EInstructions.Movements movements;
 
-        public MissionControl((int, int) coordinates, EInstructions.Directions direction, (int, int) maxBoundary, string instructions)
+        public MissionControl((int, int) maxBoundary, (int, int) coordinates, EInstructions.Directions direction, string instructions)
         {
             Rover = new MarsRover(coordinates, direction);
             PlateauSurface = new Plateau(maxBoundary);
@@ -41,7 +41,13 @@ namespace MarsRoverChallenge
                 { 
                     case 'L': Rover.LeftTurn(); break;
                     case 'R': Rover.RightTurn(); break;
-                    case 'M': Rover.MoveForward(); break;
+                    case 'M':
+                        {
+                            //check surface boundaries
+                            //check surface obstacles
+                            Rover.MoveForward();
+                            break;
+                        }
                 }
 
             }

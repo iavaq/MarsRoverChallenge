@@ -14,9 +14,8 @@ namespace MarsRoverChallenge.Models
         {
         }
 
-        public static void GetVehiclesOnSurface()
-        {
-           
+        public override void CheckBoundaries() 
+        { 
         }
     }
 }

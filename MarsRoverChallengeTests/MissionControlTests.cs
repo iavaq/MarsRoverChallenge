@@ -20,5 +20,13 @@ namespace MarsRoverChallengeTests
 
             marsMission.CurrentLocation().Should().Be("(1, 3) N");
         }
+
+         [Test]
+        public void ShouldReturn51E()
+        {
+            marsMission = new MissionControl((5, 5), (3, 3), MarsRoverChallenge.BaseModels.EInstructions.Directions.E, " MMRMMRMRRM");
+
+            marsMission.CurrentLocation().Should().Be("(5, 1) E");
+        }
     }
 }

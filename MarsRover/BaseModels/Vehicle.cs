@@ -21,7 +21,7 @@ namespace MarsRoverChallenge
         {
             if (Direction.Equals(EInstructions.Directions.E))
             {
-                Direction = EInstructions.Directions.NONE;
+                Direction = 0;
             }
 
             Direction += 90;
@@ -30,17 +30,18 @@ namespace MarsRoverChallenge
 
         public virtual void RightTurn()
         {
+            Direction -= 90;
             if (Direction.Equals(EInstructions.Directions.NONE))
             {
                 Direction = EInstructions.Directions.E;
             }
 
-            Direction -= 90;
             Console.WriteLine(Direction);
         }
 
         public virtual void MoveForward()
         {
+            //check space first
             int x = Coordinates.Item1;
             int y = Coordinates.Item2;
 

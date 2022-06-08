@@ -12,12 +12,10 @@ namespace MarsRoverChallenge
     {
         public Plateau PlateauSurface { get; private set; }
         public MarsRover Rover { get; private set; }
-
         public string Instructions { get; private set; }
     
-  
-        public EInstructions.Directions directions;
-        public EInstructions.Movements movements;
+        //public EInstructions.Directions directions;
+        //public EInstructions.Movements movements;
 
         public MissionControl((int, int) maxBoundary, (int, int) coordinates, EInstructions.Directions direction, string instructions)
         {

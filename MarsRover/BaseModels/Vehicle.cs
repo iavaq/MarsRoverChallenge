@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace MarsRoverChallenge
 {
-    public abstract class Vehicle: IControl
+    public abstract class Vehicle: INavigation
     {
-        public (int, int) Coordinates { get; set; }
-        public EInstructions.Directions Direction { get; set; }
+        public (int, int) Coordinates { get; private set; }
+        public EInstructions.Directions Direction { get; private set; }
         public Vehicle((int, int) coordinates, EInstructions.Directions direction)
         {
             Coordinates = coordinates;

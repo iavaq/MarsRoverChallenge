@@ -21,6 +21,7 @@ namespace MarsRoverChallenge
         {
             Rover = new MarsRover(coordinates, direction);
             PlateauSurface = new Plateau(maxBoundary);
+            PlateauSurface.AddVehicles(Rover);
             Instructions = instructions;
         }
 
@@ -44,11 +45,17 @@ namespace MarsRoverChallenge
                             //check surface boundaries
                             //check surface obstacles
                             Rover.MoveForward();
+                            PlateauSurface.UpdateMatrix(Rover);
                             break;
                         }
                 }
 
             }
+
+        }
+
+        public void UpdateSurface()
+        {
 
         }
 

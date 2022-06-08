@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MarsRoverChallenge.BaseModels
 {
-    public interface IControl
+    public interface ISensor
     {
-        void LeftTurn();
-        void RightTurn();
-        void MoveForward();
+        void CheckBoundaries();
+        List<(int, int)> CheckObstacles(Surface surface); //returns coordinates of nearest obstacle(s)
     }
 }

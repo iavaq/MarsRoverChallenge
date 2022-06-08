@@ -10,12 +10,11 @@ namespace MarsRoverChallenge.Models
     public class Plateau : Surface
     {
         private static (int, int) minBoundary = (0, 0);
+     
         public Plateau((int, int) maxBoundary) : base(minBoundary, maxBoundary)
         {
+            string[,] SurfaceMatrix = new string[MaxBoundary.Item1, MaxBoundary.Item2];
         }
 
-        public override void CheckBoundaries() 
-        { 
-        }
     }
 }

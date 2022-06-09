@@ -39,18 +39,73 @@ namespace MarsRoverChallenge
             Console.WriteLine(Direction);
         }
 
-        public virtual void MoveForward()
+        public virtual void MoveForward(Surface surface)
         {
             //check space first
             int x = Coordinates.Item1;
             int y = Coordinates.Item2;
+            int space = 0;
+
+            List<(int, int)> obstacles = new List<(int, int)> { };
 
             switch (Direction)
             {
-                case EInstructions.Directions.E: x++; break;
-                case EInstructions.Directions.W: x--; break;
-                case EInstructions.Directions.S:; y--; break;
-                case EInstructions.Directions.N: y++; break;
+                case EInstructions.Directions.E:
+                    {
+                        for (int i = x; i <= surface.MaxBoundary.Item1; ++i)
+                            if (surface.SurfaceMatrix[i, y].Equals("*"))
+                            {
+                                obstacles.Add((i, y));
+                                space = i - x;
+                                break;
+                            }
+                        if (space > ++x)
+                            x++;
+                       // else throw colision exception
+                        break;
+                    }
+                case EInstructions.Directions.W: 
+                    {
+                        for (int i = x; i >= surface.MinBoundary.Item1; --i)
+                            if (surface.SurfaceMatrix[i, y].Equals("*"))
+                            {
+                                obstacles.Add((i, y));
+                                space = x - i;
+                                break;
+                            }
+                        if (space > --y)
+                            x--;
+                        // else throw colision exception
+                        break;
+                    }
+                case EInstructions.Directions.S:;
+                    {
+                        for (int i = y; i >= surface.MinBoundary.Item2; --i)
+                            if (surface.SurfaceMatrix[x, i].Equals("*"))
+                            {
+                                obstacles.Add((x, i));
+                                space = y - i;
+                                break;
+                            }
+                        if (space > --y)
+                            y--;
+                        // else throw colision exception
+                        break;
+                    }
+                case EInstructions.Directions.N:
+                    {
+                        for (int i = y; i <= surface.MaxBoundary.Item2; ++i)
+                            if (surface.SurfaceMatrix[x, i].Equals("*"))
+                            {
+                                obstacles.Add((x, i));
+                                space = i - y;
+                                break;
+                            }
+                        if (space > ++y)
+                            y++;
+                        // else throw colision exception
+                        break;
+                    }
             }
 
             Coordinates = (x, y);

@@ -44,8 +44,12 @@ namespace MarsRoverChallenge
                         {
                             //check surface boundaries
                             //check surface obstacles
-                            Rover.MoveForward();
+                            //check current axis
+                          
+                            Rover.MoveForward(PlateauSurface);
                             PlateauSurface.UpdateMatrix(Rover);
+                            
+                            //check the difference between obstacle and current position is big enough
                             break;
                         }
                 }

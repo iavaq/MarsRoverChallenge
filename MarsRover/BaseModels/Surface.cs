@@ -17,7 +17,7 @@ namespace MarsRoverChallenge
         {
             MinBoundary = minBoundary;
             MaxBoundary = maxBoundary;
-            SurfaceMatrix = new bool[10,10];
+            SurfaceMatrix = new bool[MaxBoundary.Item1+1,MaxBoundary.Item2+1];
             VehiclesOnSurface = new List<Vehicle> { };
         }
 
@@ -33,9 +33,18 @@ namespace MarsRoverChallenge
             int x = aVehicle.Coordinates.Item1;
             int y = aVehicle.Coordinates.Item2;
 
-
             SurfaceMatrix[x, y] = true;
 
+        }
+
+        public void PrintMatrix()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("\n");
+                for (int j = 0; j < 5; j++)
+                    Console.Write(SurfaceMatrix[i, j] + " ");
+            }
         }
 
 

@@ -52,27 +52,31 @@ namespace MarsRoverChallenge
             {
                 case EInstructions.Directions.E:
                     {
-                        for (int i = x; i <= surface.MaxBoundary.Item1; ++i)
+                        for (int i = x; i < surface.MaxBoundary.Item1; ++i)
+                        {
                             if (surface.SurfaceMatrix[i, y])
                             {
                                 obstacles.Add((i, y));
                                 space = i - x;
                                 break;
                             }
+                        }
                         if (space > ++x)
                             x++;
-                       // else throw colision exception
-                        break;
+                        // else throw colision exception
+                                   break;
                     }
                 case EInstructions.Directions.W: 
                     {
-                        for (int i = x; i >= surface.MinBoundary.Item1; --i)
+                        for (int i = x; i > surface.MinBoundary.Item1; --i)
+                        {
                             if (surface.SurfaceMatrix[i, y])
                             {
                                 obstacles.Add((i, y));
                                 space = x - i;
                                 break;
                             }
+                        }
                         if (space > --x)
                             x--;
                         // else throw colision exception
@@ -80,13 +84,15 @@ namespace MarsRoverChallenge
                     }
                 case EInstructions.Directions.S:;
                     {
-                        for (int i = y; i >= surface.MinBoundary.Item2; --i)
+                        for (int i = y; i > surface.MinBoundary.Item2; --i)
+                        {
                             if (surface.SurfaceMatrix[x, i])
                             {
                                 obstacles.Add((x, i));
                                 space = y - i;
                                 break;
                             }
+                        }
                         if (space > --y)
                             y--;
                         // else throw colision exception
@@ -94,13 +100,15 @@ namespace MarsRoverChallenge
                     }
                 case EInstructions.Directions.N:
                     {
-                        for (int i = y; i <= surface.MaxBoundary.Item2; ++i)
+                        for (int i = y; i < surface.MaxBoundary.Item2; ++i)
+                        {
                             if (surface.SurfaceMatrix[x, i])
                             {
                                 obstacles.Add((x, i));
                                 space = i - y;
                                 break;
                             }
+                        }
                         if (space > ++y)
                             y++;
                         // else throw colision exception

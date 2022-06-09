@@ -73,7 +73,7 @@ namespace MarsRoverChallenge
                                 space = x - i;
                                 break;
                             }
-                        if (space > --y)
+                        if (space > --x)
                             x--;
                         // else throw colision exception
                         break;

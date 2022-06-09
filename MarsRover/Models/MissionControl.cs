@@ -40,22 +40,11 @@ namespace MarsRoverChallenge
                 { 
                     case 'L': Rover.LeftTurn(); break;
                     case 'R': Rover.RightTurn(); break;
-                    case 'M':
-                        {
-                            //check surface boundaries
-                            //check surface obstacles
-                            //check current axis
-                          
-                            Rover.MoveForward(PlateauSurface);
-                            PlateauSurface.UpdateMatrix(Rover);
-                            
-                            //check the difference between obstacle and current position is big enough
-                            break;
-                        }
+                    case 'M': Rover.MoveForward(PlateauSurface); PlateauSurface.UpdateMatrix(Rover); break;
                 }
 
             }
-
+            //PlateauSurface.UpdateMatrix(Rover);
         }
 
         public void UpdateSurface()

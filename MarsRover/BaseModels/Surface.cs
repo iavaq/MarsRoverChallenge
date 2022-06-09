@@ -17,7 +17,7 @@ namespace MarsRoverChallenge
         {
             MinBoundary = minBoundary;
             MaxBoundary = maxBoundary;
-            SurfaceMatrix = new string[,] { };
+            SurfaceMatrix = new string[10,10];
             VehiclesOnSurface = new List<Vehicle> { };
         }
 
@@ -32,7 +32,8 @@ namespace MarsRoverChallenge
         {
             int x = aVehicle.Coordinates.Item1;
             int y = aVehicle.Coordinates.Item2;
-
+            
+            
             SurfaceMatrix[x, y] = "*";
         }
     

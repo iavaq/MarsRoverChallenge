@@ -10,6 +10,6 @@ namespace MarsRoverChallenge.BaseModels
     {
         void LeftTurn();
         void RightTurn();
-        void MoveForward();
+        void MoveForward(Surface surface);
     }
 }

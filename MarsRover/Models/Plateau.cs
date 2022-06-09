@@ -13,7 +13,7 @@ namespace MarsRoverChallenge.Models
      
         public Plateau((int, int) maxBoundary) : base(minBoundary, maxBoundary)
         {
-            string[,] SurfaceMatrix = new string[MaxBoundary.Item1, MaxBoundary.Item2];
+            
         }
 
     }

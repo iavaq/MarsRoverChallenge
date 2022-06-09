@@ -40,11 +40,11 @@ namespace MarsRoverChallenge
                 { 
                     case 'L': Rover.LeftTurn(); break;
                     case 'R': Rover.RightTurn(); break;
-                    case 'M': Rover.MoveForward(PlateauSurface); PlateauSurface.UpdateMatrix(Rover); break;
+                    case 'M': Rover.MoveForward(PlateauSurface); break;
                 }
 
             }
-            //PlateauSurface.UpdateMatrix(Rover);
+            PlateauSurface.UpdateMatrix(Rover);
         }
 
         public void UpdateSurface()

@@ -10,14 +10,14 @@ namespace MarsRoverChallenge
     {
         public readonly (int, int) MinBoundary;
         public readonly (int, int) MaxBoundary;
-        public string[ , ] SurfaceMatrix { get; private set; }
+        public bool[,] SurfaceMatrix { get; private set; }
         public List<Vehicle> VehiclesOnSurface { get; private set; }
 
         public Surface((int, int) minBoundary, (int, int) maxBoundary)
         {
             MinBoundary = minBoundary;
             MaxBoundary = maxBoundary;
-            SurfaceMatrix = new string[10,10];
+            SurfaceMatrix = new bool[10,10];
             VehiclesOnSurface = new List<Vehicle> { };
         }
 
@@ -32,12 +32,12 @@ namespace MarsRoverChallenge
         {
             int x = aVehicle.Coordinates.Item1;
             int y = aVehicle.Coordinates.Item2;
-            
-            
-            SurfaceMatrix[x, y] = "*";
+
+
+            SurfaceMatrix[x, y] = true;
+
         }
-    
-       
+
 
     }
 }

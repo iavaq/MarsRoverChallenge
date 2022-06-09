@@ -53,7 +53,7 @@ namespace MarsRoverChallenge
                 case EInstructions.Directions.E:
                     {
                         for (int i = x; i <= surface.MaxBoundary.Item1; ++i)
-                            if (surface.SurfaceMatrix[i, y].Equals("*"))
+                            if (surface.SurfaceMatrix[i, y])
                             {
                                 obstacles.Add((i, y));
                                 space = i - x;
@@ -67,7 +67,7 @@ namespace MarsRoverChallenge
                 case EInstructions.Directions.W: 
                     {
                         for (int i = x; i >= surface.MinBoundary.Item1; --i)
-                            if (surface.SurfaceMatrix[i, y].Equals("*"))
+                            if (surface.SurfaceMatrix[i, y])
                             {
                                 obstacles.Add((i, y));
                                 space = x - i;
@@ -81,7 +81,7 @@ namespace MarsRoverChallenge
                 case EInstructions.Directions.S:;
                     {
                         for (int i = y; i >= surface.MinBoundary.Item2; --i)
-                            if (surface.SurfaceMatrix[x, i].Equals("*"))
+                            if (surface.SurfaceMatrix[x, i])
                             {
                                 obstacles.Add((x, i));
                                 space = y - i;
@@ -95,7 +95,7 @@ namespace MarsRoverChallenge
                 case EInstructions.Directions.N:
                     {
                         for (int i = y; i <= surface.MaxBoundary.Item2; ++i)
-                            if (surface.SurfaceMatrix[x, i].Equals("*"))
+                            if (surface.SurfaceMatrix[x, i])
                             {
                                 obstacles.Add((x, i));
                                 space = i - y;
